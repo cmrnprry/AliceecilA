@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: 26b1fd113200f984da1dc938adf9fc56
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: 2891a24c65380b442b8b1d90ef8b52a0
+  - enabled: 1
+    path: Assets/Scenes/LevelOneFlip.unity
+    guid: 234fca1340ee7f94fa720356c1ff3d1b
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: 7437a779b72818f4dbb8bffcb0438049
+  - enabled: 1
+    path: Assets/Scenes/LevelTwoFlip.unity
+    guid: 35cc65767d28c744fb8a7aac9a66c366
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: ec311a339cd409144acee504b1a0421f
+  - enabled: 1
+    path: Assets/Scenes/LevelThreeFlip.unity
+    guid: 3867f18272a86fd499aa370f3a8e496e
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 6df6817fb9f025c4891854f1417a8c96
+  m_configObjects: {}
