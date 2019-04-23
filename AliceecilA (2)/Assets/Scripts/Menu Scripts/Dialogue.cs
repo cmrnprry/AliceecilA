@@ -9,11 +9,19 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI display;
     public GameObject AliceBubble;
     public GameObject OtherBubble;
+
+    //Controlls the talking animation
+    public GameObject Other;
+    public GameObject Alice;
+
+    private Animator OtherAnim;
+    private Animator AliceAnim;
+
     //dialogue
     public string[] words;
 
     //what char of dialogue we're on
-    private int index;
+    public int index;
 
     //how long before each letter of dialgue is shows
     public float waitSpeed;
@@ -54,9 +62,17 @@ public class Dialogue : MonoBehaviour
             AliceBubble.SetActive(false);
             OtherBubble.SetActive(false);
 
+            OtherAnim.enabled = false;
+
+            if (Other.tag == "Elica")
+            {
+                Other.SetActive(false);
+            }
+
             //returns the players movement
-            FindObjectOfType<Movement>().jumpForce = 275f;
-            FindObjectOfType<Movement>().maxSpeed = 5f;
+            GameObject.Find("Player").GetComponent<Movement>().enabled = true;
+            AliceAnim.SetBool("Talk", false);
+            AliceAnim.SetBool("Idle", true);
         }
     }
 
@@ -64,8 +80,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         //stops the player from moving
-        FindObjectOfType<Movement>().jumpForce = 0;
-        FindObjectOfType<Movement>().maxSpeed = 0;
+        GameObject.Find("Player").GetComponent<Movement>().enabled = false;
 
         //Disables the continue Button
         proceed.SetActive(false);
@@ -75,6 +90,11 @@ public class Dialogue : MonoBehaviour
 
         //does the thing in IEnumerator Type()
         StartCoroutine(Type());
+
+        Debug.Log(Other.name);
+        OtherAnim = Other.GetComponent<Animator>();
+        Debug.Log(OtherAnim.gameObject.name);
+        AliceAnim = Alice.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -95,19 +115,28 @@ public class Dialogue : MonoBehaviour
 
         if (display.text.Length > 4)
         {
-            if (display.text.Substring(0, 5) == "Alice")
+            if (display.text.Substring(0, 1) == "A")
             {
                 AliceBubble.SetActive(true);
+                AliceAnim.SetBool("Talk", true);
+
+                OtherAnim.enabled = false;
             }
             else
             {
                 OtherBubble.SetActive(true);
+                OtherAnim.enabled = true;
+
+                AliceAnim.SetBool("Talk", false);
             }
         }
         else
         {
             AliceBubble.SetActive(false);
             OtherBubble.SetActive(false);
+
+            AliceAnim.SetBool("Talk", false);
+            OtherAnim.enabled = false;
         }
     }
 }

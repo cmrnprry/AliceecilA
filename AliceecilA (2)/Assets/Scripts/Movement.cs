@@ -4,7 +4,7 @@ using System.Collections;
 public class Movement : MonoBehaviour
 {
 
-    [HideInInspector] public bool facingRight = true;
+    public bool facingRight;
 
     //how fast the player moves
     public float maxSpeed;
@@ -84,21 +84,19 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        anim.SetFloat("Walk", false);
+        anim.SetBool("Walk", false);
 
         moveInput = Input.GetAxisRaw("Horizontal");
 
         if (moveInput > 0 || moveInput < 0)
         {
             rb2d.velocity = new Vector2(moveInput * maxSpeed, rb2d.velocity.y);
-            anim.SetFloat("Walk", true);
+            anim.SetBool("Walk", true);
         }
         else
         {
             rb2d.velocity = new Vector2(moveInput, rb2d.velocity.y);
         }
-
-
 
         if (moveInput > 0 && !facingRight || moveInput < 0 && facingRight)
         {

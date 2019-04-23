@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6088236548174334999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: -5.3, z: -0.6699219}
+  m_LocalPosition: {x: 0.2, y: 3.2, z: -0.6699219}
   m_LocalScale: {x: 0.08219178, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 6088236548741962493}
@@ -42,8 +42,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10
-  m_Range: 100
+  m_Intensity: 6
+  m_Range: 200
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -64,7 +64,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -143,12 +143,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3da94c20cb713ff4995ef096b6038432, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3efb7b788b47b343992a863c6531d40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 18, y: 33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -188,18 +188,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.91857624, y: -3.060276}
+  m_Offset: {x: 0.71601677, y: 0.7862663}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 33, y: 51}
-    newSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 18, y: 33}
+    newSize: {x: 18, y: 33}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.339422, y: 33.046417}
+  m_Size: {x: 11.554737, y: 34.261105}
   m_EdgeRadius: 0
 --- !u!114 &6088236548741962482
 MonoBehaviour:
@@ -219,7 +219,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  distance: 1
 --- !u!114 &6088236548741962483
 MonoBehaviour:
   m_ObjectHideFlags: 0
